@@ -1,0 +1,12 @@
+*{ box-sizing: border-box; }
+html, body, #root{ height:100%; }
+body{
+  margin:0;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background:#fff;
+}
+.container{
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}

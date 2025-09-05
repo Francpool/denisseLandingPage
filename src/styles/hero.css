@@ -1,0 +1,56 @@
+.hero{
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding: clamp(2rem, 6vw, 4rem) 0 clamp(0rem, 4vw, 1rem);
+  min-height: clamp(520px, 65vh, 680px);
+}
+
+/* Fondo bicolor usando tus HEX */
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(to bottom,
+      var(--color-cream) 0 var(--hero-cut),
+      var(--color-mint)  var(--hero-cut) 100%);
+  z-index:-2;
+}
+
+/* Aros suaves con opacidad */
+.hero__ring{ position:absolute; width:min(36vw, 420px); aspect-ratio:1/1; z-index:-1; }
+
+/* aro superior-izquierdo (menta) */
+.hero__ring--tl{
+  top:-6%; left:-4%;
+  background: radial-gradient(circle,
+    rgba(var(--mint-rgb), .18) 0 48%, transparent 50% 100%);
+}
+
+/* aro inferior-derecho (rosado) */
+.hero__ring--br{
+  right:-6%; bottom:-10%; width:min(40vw, 480px);
+  background: radial-gradient(circle,
+    rgba(var(--pink-rgb), .22) 0 48%, transparent 50% 100%);
+}
+
+/* Ícono del estómago */
+.hero__stomach{
+  position:absolute;
+  right:min(6vw, 72px);
+  top: clamp(120px, 22vh, 200px);
+  width:min(20vw, 240px);
+  opacity:.95;
+  z-index:-1;
+}
+
+/* Grid (texto | foto) – igual que antes */
+.hero__grid{ display:grid; grid-template-columns:1.05fr .95fr; align-items:end; gap:clamp(1.25rem,3vw,2rem); }
+.hero__figure{ position:relative; display:flex; justify-content:center; align-items:flex-end; }
+.hero__photo{ display:block; height:min(68vh,560px); width:auto; filter:drop-shadow(0 12px 28px rgba(0,0,0,.18)); }
+
+@media (max-width:900px){
+  .hero__grid{ grid-template-columns:1fr; align-items:start; }
+  .hero__figure{ order:-1; justify-content:flex-end; }
+  .hero__photo{ height:min(44vh,420px); }
+}

@@ -1,0 +1,25 @@
+:root{
+  /* Colores exactos de Canva */
+  --color-cream: #fdf4ef;   /* crema */
+  --color-mint:  #d2eae7;   /* menta */
+  --color-pink:  #facedb;   /* carmesí claro */
+
+  /* Para los aros (valores RGB derivados) */
+  --mint-rgb: 210, 234, 231;  /* d2,e a,e7 */
+  --pink-rgb: 250, 206, 219;  /* fa,ce,db */
+
+  --color-text: #3A3A3A;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans:  "Poppins", system-ui, -apple-system, sans-serif;
+
+  --container: 1200px;
+  --radius: 16px;
+  --shadow-1: 0 10px 25px rgba(0,0,0,.08);
+
+  --space-1:.25rem; --space-2:.5rem; --space-3:.75rem;
+  --space-4:1rem;   --space-5:1.5rem; --space-6:2rem; --space-7:3rem;
+
+  /* punto de corte de la franja menta (ajústalo 60–66% según veas) */
+  --hero-cut: 64%;
+}
