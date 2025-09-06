@@ -18,11 +18,11 @@ export default function Hero(){
       <div className="container hero__grid">
         {/* TEXTO (columna izquierda) */}
         <div className="hero__text">
-          <h1 className="hero__title">
+          <h1 className="hero__title libre-baskerville-bold">
             DRA.<br/>DENISSE<br/>MAYORGA
           </h1>
 
-         <p className="hero__subtitle">
+         <p className="hero__subtitle poppins-regular">
   Gastroenterología,&nbsp;Hepatología<br/>
   Nutrición&nbsp;Pediátrica<br/>
   M.SC&nbsp;Alergia

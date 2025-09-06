@@ -3,7 +3,136 @@
    Capas: fondo (-4) < aros (-2) < estómago (-1) < contenido (0)
    ========================= */
 
-.hero{
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+
+   .hero{
   position: relative;
   isolation: isolate;
   overflow: clip;
@@ -102,7 +231,7 @@
   gap: clamp(.6rem, 1.2vw, 1rem);
 }
 .hero__title{
-  font-family: var(--font-serif, "Playfair Display", serif);
+ 
   color: var(--color-text, #3a3a3a);
   text-transform: uppercase;
   font-weight: 700;
@@ -113,7 +242,7 @@
   font-size: clamp(2.4rem, 3.4vw, 3.6rem);
 }
 .hero__subtitle{
-  font-family: var(--font-sans, "Poppins", system-ui, sans-serif);
+  
   color: var(--color-text, #3a3a3a);
   opacity: .95;
   font-weight: 500;
@@ -129,8 +258,6 @@
   word-break: keep-all;
   overflow-wrap: normal;
 }
-
-
 
 /* ===== Responsive ===== */
 @media (max-width: 900px){
@@ -150,4 +277,62 @@
 @media (min-width: 1200px){
   .hero__title{ font-size: 60px; }
   .hero__subtitle{ font-size: 18px; }
+}
+
+/* === Colocar el TÍTULO en el centro vertical de la franja crema
+       y al 25% horizontal desde la izquierda ==================== */
+
+/* “perillas” para mover rápido si quieres ajustar luego */
+:root{
+  --title-x: 25%;                        /* 25% = cuarto izquierdo */
+  --title-y: calc(var(--hero-cut) / 2);  /* mitad de la franja crema */
+}
+
+.hero__title{
+  position: absolute;             /* se sale del flujo para colocar exacto */
+  left: var(--title-x);
+  top: var(--title-y);
+  transform: translate(-50%, -50%);  /* centra el bloque en ese punto */
+  margin: 0;                         /* sin márgenes extra */
+  max-width: 12ch;                   /* mantiene 3 líneas */
+  z-index: 0;                        /* sobre el fondo */
+}
+
+/* En mobile vuelve al flujo normal para que sea legible */
+@media (max-width: 900px){
+  .hero__title{
+    position: static;
+    transform: none;
+    margin: 0 0 .75rem;
+    max-width: 14ch;
+  }
+}
+
+/* === Colocar el PÁRRAFO en el centro vertical de la franja turquesa
+       y al 25% horizontal desde la izquierda ==================== */
+
+:root{
+  --subtitle-x: 25%;
+  --subtitle-y: calc((var(--hero-cut) + 100%) / 2); /* centro de la menta */
+}
+
+.hero__subtitle{
+  position: absolute;
+  left: var(--subtitle-x);
+  top: var(--subtitle-y);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  max-width: 34ch;
+  text-align: center;  /* centrado visual */
+  z-index: 0;
+}
+
+@media (max-width: 900px){
+  .hero__subtitle{
+    position: static;
+    transform: none;
+    max-width: 28ch;
+    text-align: left;   /* o center si prefieres en móvil */
+    margin: 0 0 .75rem 0;
+  }
 }
