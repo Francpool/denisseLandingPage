@@ -1,3 +1,8 @@
+/* =========================
+   HERO — Fondo + aros + icono + foto
+   Capas: fondo (-4) < aros (-2) < estómago (-1) < contenido (0)
+   ========================= */
+
 .hero{
   position: relative;
   isolation: isolate;
@@ -6,51 +11,143 @@
   min-height: clamp(520px, 65vh, 680px);
 }
 
-/* Fondo bicolor usando tus HEX */
+/* Fondo bicolor */
 .hero::before{
   content:"";
   position:absolute; inset:0;
   background:
     linear-gradient(to bottom,
-      var(--color-cream) 0 var(--hero-cut),
-      var(--color-mint)  var(--hero-cut) 100%);
-  z-index:-2;
+      var(--color-cream) 0 var(--hero-cut, 64%),
+      var(--color-mint)  var(--hero-cut, 64%) 100%);
+  z-index:-4;
 }
 
-/* Aros suaves con opacidad */
-.hero__ring{ position:absolute; width:min(36vw, 420px); aspect-ratio:1/1; z-index:-1; }
-
-/* aro superior-izquierdo (menta) */
-.hero__ring--tl{
-  top:-6%; left:-4%;
-  background: radial-gradient(circle,
-    rgba(var(--mint-rgb), .18) 0 48%, transparent 50% 100%);
+/* Aros (semicírculos con centro vacío) – SIN HTML extra */
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  z-index:-2;                 /* sobre el fondo */
+  pointer-events:none;
+  background-repeat:no-repeat;
+  background-image:
+    radial-gradient(circle,
+      transparent 62%,                               /* centro vacío */
+      rgba(var(--mint-rgb,210,234,231), .28) 63% 74%,/* banda visible */
+      transparent 75% 100%),
+    radial-gradient(circle,
+      transparent 62%,
+      rgba(var(--mint-rgb,210,234,231), .28) 63% 74%,
+      transparent 75% 100%);
+  background-size:
+    340px 340px,                                       /* sup-izq */
+    380px 380px;                                       /* inf-der */
+  background-position:
+    -120px -120px,                                     /* sup-izq */
+    calc(100% + 120px) calc(100% + 120px);             /* inf-der */
 }
 
-/* aro inferior-derecho (rosado) */
+/* Oculta los discos antiguos si existen en el DOM */
+.hero__ring,
+.hero__ring--tl,
 .hero__ring--br{
-  right:-6%; bottom:-10%; width:min(40vw, 480px);
-  background: radial-gradient(circle,
-    rgba(var(--pink-rgb), .22) 0 48%, transparent 50% 100%);
+  display:none !important;
+  background:none !important;
 }
 
-/* Ícono del estómago */
+/* ===== Icono estómago ===== */
 .hero__stomach{
   position:absolute;
-  right:min(6vw, 72px);
-  top: clamp(120px, 22vh, 200px);
-  width:min(20vw, 240px);
+  right:clamp(28px, 6vw, 70px);
+  top:clamp(90px, 18vh, 155px);
+  width:clamp(110px, 10.5vw, 170px);
+  height:auto;
+  z-index:-1;                /* sobre aros, detrás del contenido */
   opacity:.95;
-  z-index:-1;
+}
+@media (max-width: 900px){
+  .hero__stomach{
+    right:16px;
+    top:96px;
+    width:clamp(90px, 22vw, 140px);
+  }
 }
 
-/* Grid (texto | foto) – igual que antes */
-.hero__grid{ display:grid; grid-template-columns:1.05fr .95fr; align-items:end; gap:clamp(1.25rem,3vw,2rem); }
-.hero__figure{ position:relative; display:flex; justify-content:center; align-items:flex-end; }
-.hero__photo{ display:block; height:min(68vh,560px); width:auto; filter:drop-shadow(0 12px 28px rgba(0,0,0,.18)); }
+/* ===== Grid / foto ===== */
+.hero__grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items:end;
+  gap:clamp(1.25rem, 3vw, 2rem);
+}
+.hero__figure{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+.hero__photo{
+  display:block;
+  height:min(68vh,560px);
+  width:auto; /* no deformar */
+  filter:drop-shadow(0 12px 28px rgba(0,0,0,.18));
+}
 
-@media (max-width:900px){
-  .hero__grid{ grid-template-columns:1fr; align-items:start; }
+/* ===== Texto del hero ===== */
+.hero__text{
+  align-self: end;                          /* ancla el bloque sobre la franja menta */
+  padding-left: clamp(1rem, 3vw, 2rem);
+  padding-bottom: clamp(1rem, 3vh, 2rem);
+  max-width: 32ch;                          /* ancho cómodo para el párrafo */
+  display: grid;
+  gap: clamp(.6rem, 1.2vw, 1rem);
+}
+.hero__title{
+  font-family: var(--font-serif, "Playfair Display", serif);
+  color: var(--color-text, #3a3a3a);
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: .3px;
+  margin: 0;                                /* el espacio lo da el gap del contenedor */
+  max-width: 12ch;                          /* 3 líneas: DRA./DENISSE/MAYORGA */
+  font-size: clamp(2.4rem, 3.4vw, 3.6rem);
+}
+.hero__subtitle{
+  font-family: var(--font-sans, "Poppins", system-ui, sans-serif);
+  color: var(--color-text, #3a3a3a);
+  opacity: .95;
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: .15px;
+  margin: 0;
+  max-width: 32ch;
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  text-align: center;
+
+  /* evita cortes feos */
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .hero__grid{ grid-template-columns:1fr; }
   .hero__figure{ order:-1; justify-content:flex-end; }
   .hero__photo{ height:min(44vh,420px); }
+  .hero__text{
+    max-width: 24ch;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+  .hero__title{ font-size: clamp(2rem, 7vw, 2.6rem); }
+  .hero__subtitle{ font-size: clamp(.95rem, 3.2vw, 1rem); }
+}
+
+/* Desktop grande (tope tipo Canva) */
+@media (min-width: 1200px){
+  .hero__title{ font-size: 60px; }
+  .hero__subtitle{ font-size: 18px; }
 }
