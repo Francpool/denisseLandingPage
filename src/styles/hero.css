@@ -132,12 +132,16 @@
 
 
 
-   .hero{
+/* HERO */
+.hero{
   position: relative;
   isolation: isolate;
   overflow: clip;
-  padding: clamp(2rem, 6vw, 4rem) 0 clamp(0rem, 4vw, 1rem);
+  /* antes: padding: clamp(2rem, 6vw, 4rem) 0 clamp(0rem, 4vw, 1rem); */
+  padding-top: clamp(2rem, 6vw, 4rem);
+  padding-bottom: 0;              /* ← sin aire abajo */
   min-height: clamp(520px, 65vh, 680px);
+  margin-bottom: 0;               /* ← por si había herencia */
 }
 
 /* Fondo bicolor */
@@ -202,11 +206,13 @@
 }
 
 /* ===== Grid / foto ===== */
+/* Evitar que el contenido empuje hacia abajo */
 .hero__grid{
   display:grid;
   grid-template-columns: 1.05fr .95fr;
   align-items:end;
   gap:clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 0;               /* ← asegura cero */
 }
 .hero__figure{
   position:relative;
@@ -214,19 +220,21 @@
   justify-content:center;
   align-items:flex-end;
 }
+/* La sombra de la foto no debe “simular” hueco: mantenerla pero no hay espacio real */
 .hero__photo{
   display:block;
   height:min(68vh,560px);
-  width:auto; /* no deformar */
+  width:auto;
   filter:drop-shadow(0 12px 28px rgba(0,0,0,.18));
 }
 
 /* ===== Texto del hero ===== */
+/* El bloque de texto no agrega altura al final del hero */
 .hero__text{
-  align-self: end;                          /* ancla el bloque sobre la franja menta */
+  align-self: end;
   padding-left: clamp(1rem, 3vw, 2rem);
-  padding-bottom: clamp(1rem, 3vh, 2rem);
-  max-width: 32ch;                          /* ancho cómodo para el párrafo */
+  padding-bottom: 0;              /* ← antes tenía padding-bottom */
+  max-width: 32ch;
   display: grid;
   gap: clamp(.6rem, 1.2vw, 1rem);
 }

@@ -1,0 +1,110 @@
+/* Sección */
+.specialties {
+  font-family: var(--font-sans); /* Poppins en todo el componente */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-6);
+  padding-block: clamp(3rem, 6vw, 5rem); /* ritmo vertical tipo Hero */
+   margin-top: -8px;   /* ← solape ínfimo para borrar cualquier “costura” visual */
+}
+
+/* Columna izquierda (bloque menta) */
+.specialties__aside {
+  position: relative;
+  background: var(--color-mint);
+  border-radius: var(--radius);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  display: flex;
+  justify-content: center;  /* centra horizontal */
+  align-items: center;       /* centra vertical */
+  text-align: left;
+  overflow: hidden;          /* franja contenida dentro del bloque */
+}
+
+/* Franja beige detrás del texto */
+.specialties__pill {
+  position: absolute;
+  left: clamp(1rem, 2vw, 2rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(40px, 4vw, 60px);  /* más ancha */
+  height: 80%;
+  background: var(--color-cream);
+  border-radius: 50px;
+  z-index: 0;                     /* por detrás del texto */
+}
+
+/* Título dentro del bloque menta */
+.specialties__title {
+  position: relative;
+  z-index: 1; /* sobre la franja */
+  margin: 0;
+  font-size: clamp(1.25rem, 2.6vw, 2.25rem);
+  line-height: 1.2;
+  color: var(--color-text);
+  font-weight: 600; /* look Poppins semibold */
+}
+
+/* === Grid de tarjetas ===
+   6 columnas invisibles; cada tarjeta ocupa 2.
+   Fila 1: [1–2][3–4][5–6]
+   Fila 2 centrada: [2–3][4–5] */
+.specialties__grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2vw, 1.5rem);
+  row-gap: clamp(1.25rem, 3vw, 2rem);
+  justify-items: center;
+  align-items: start;
+}
+
+.specialty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  grid-column: span 2; /* cada tarjeta ocupa 2 columnas */
+}
+
+/* Colocación centrada de la segunda fila */
+.specialty:nth-child(4) { grid-column: 2 / span 2; }
+.specialty:nth-child(5) { grid-column: 4 / span 2; }
+
+/* Imagen circular */
+.specialty__photo {
+  width: clamp(120px, 22vw, 220px);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #f3f4f6;
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-1);
+}
+.specialty__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Etiqueta */
+.specialty__label {
+  background: #FAEDEA;
+  border-radius: 12px;
+  padding: .5rem .75rem;
+  text-align: center;
+  font-size: clamp(.9rem, 1.6vw, 1rem);
+  font-weight: 400;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .specialties { grid-template-columns: 1fr; }
+  .specialties__grid { grid-template-columns: repeat(2, 1fr); }
+  .specialty { grid-column: auto; } /* layout natural 2 col */
+}
+@media (max-width: 600px) {
+  .specialties__grid { grid-template-columns: 1fr; }
+}
