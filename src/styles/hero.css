@@ -3,145 +3,42 @@
    Capas: fondo (-4) < aros (-2) < estómago (-1) < contenido (0)
    ========================= */
 
-.libre-baskerville-regular {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  font-style: normal;
-}
+/* Familias de texto utilitarias */
+.libre-baskerville-regular { font-family: "Libre Baskerville", serif; font-weight: 400; font-style: normal; }
+.libre-baskerville-bold    { font-family: "Libre Baskerville", serif; font-weight: 700; font-style: normal; }
+.libre-baskerville-regular-italic { font-family: "Libre Baskerville", serif; font-weight: 400; font-style: italic; }
 
-.libre-baskerville-bold {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 700;
-  font-style: normal;
-}
+.poppins-thin{ font-family: "Poppins", sans-serif; font-weight:100; font-style:normal; }
+.poppins-extralight{ font-family:"Poppins",sans-serif; font-weight:200; font-style:normal; }
+.poppins-light{ font-family:"Poppins",sans-serif; font-weight:300; font-style:normal; }
+.poppins-regular{ font-family:"Poppins",sans-serif; font-weight:400; font-style:normal; }
+.poppins-medium{ font-family:"Poppins",sans-serif; font-weight:500; font-style:normal; }
+.poppins-semibold{ font-family:"Poppins",sans-serif; font-weight:600; font-style:normal; }
+.poppins-bold{ font-family:"Poppins",sans-serif; font-weight:700; font-style:normal; }
+.poppins-extrabold{ font-family:"Poppins",sans-serif; font-weight:800; font-style:normal; }
+.poppins-black{ font-family:"Poppins",sans-serif; font-weight:900; font-style:normal; }
+.poppins-thin-italic{ font-family:"Poppins",sans-serif; font-weight:100; font-style:italic; }
+.poppins-extralight-italic{ font-family:"Poppins",sans-serif; font-weight:200; font-style:italic; }
+.poppins-light-italic{ font-family:"Poppins",sans-serif; font-weight:300; font-style:italic; }
+.poppins-regular-italic{ font-family:"Poppins",sans-serif; font-weight:400; font-style:italic; }
+.poppins-medium-italic{ font-family:"Poppins",sans-serif; font-weight:500; font-style:italic; }
+.poppins-semibold-italic{ font-family:"Poppins",sans-serif; font-weight:600; font-style:italic; }
+.poppins-bold-italic{ font-family:"Poppins",sans-serif; font-weight:700; font-style:italic; }
+.poppins-extrabold-italic{ font-family:"Poppins",sans-serif; font-weight:800; font-style:italic; }
+.poppins-black-italic{ font-family:"Poppins",sans-serif; font-weight:900; font-style:italic; }
 
-.libre-baskerville-regular-italic {
-  font-family: "Libre Baskerville", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
-
-
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 .hero{
   position: relative;
   isolation: isolate;
   overflow: clip;
-  /* antes: padding: clamp(2rem, 6vw, 4rem) 0 clamp(0rem, 4vw, 1rem); */
+  /* Aire solo arriba; cero abajo para no dejar “salto” */
   padding-top: clamp(2rem, 6vw, 4rem);
-  padding-bottom: 0;              /* ← sin aire abajo */
+  padding-bottom: 0;
   min-height: clamp(520px, 65vh, 680px);
-  margin-bottom: 0;               /* ← por si había herencia */
+  margin-bottom: 0;
 }
 
 /* Fondo bicolor */
@@ -155,46 +52,34 @@
   z-index:-4;
 }
 
-/* Aros (semicírculos con centro vacío) – SIN HTML extra */
+/* Aros decorativos */
 .hero::after{
   content:"";
   position:absolute; inset:0;
-  z-index:-2;                 /* sobre el fondo */
+  z-index:-2;
   pointer-events:none;
   background-repeat:no-repeat;
   background-image:
-    radial-gradient(circle,
-      transparent 62%,                               /* centro vacío */
-      rgba(var(--mint-rgb,210,234,231), .28) 63% 74%,/* banda visible */
-      transparent 75% 100%),
-    radial-gradient(circle,
-      transparent 62%,
-      rgba(var(--mint-rgb,210,234,231), .28) 63% 74%,
-      transparent 75% 100%);
-  background-size:
-    340px 340px,                                       /* sup-izq */
-    380px 380px;                                       /* inf-der */
-  background-position:
-    -120px -120px,                                     /* sup-izq */
-    calc(100% + 120px) calc(100% + 120px);             /* inf-der */
+    radial-gradient(circle, transparent 62%, rgba(var(--mint-rgb,210,234,231), .28) 63% 74%, transparent 75% 100%),
+    radial-gradient(circle, transparent 62%, rgba(var(--mint-rgb,210,234,231), .28) 63% 74%, transparent 75% 100%);
+  background-size: 340px 340px, 380px 380px;
+  background-position: -120px -120px, calc(100% + 120px) calc(100% + 120px);
 }
 
-/* Oculta los discos antiguos si existen en el DOM */
-.hero__ring,
-.hero__ring--tl,
-.hero__ring--br{
+/* Oculta discos antiguos si existen en el DOM */
+.hero__ring, .hero__ring--tl, .hero__ring--br{
   display:none !important;
   background:none !important;
 }
 
-/* ===== Icono estómago ===== */
+/* Icono estómago */
 .hero__stomach{
   position:absolute;
   right:clamp(28px, 6vw, 70px);
   top:clamp(90px, 18vh, 155px);
   width:clamp(110px, 10.5vw, 170px);
   height:auto;
-  z-index:-1;                /* sobre aros, detrás del contenido */
+  z-index:-1; /* sobre aros, detrás del contenido */
   opacity:.95;
 }
 @media (max-width: 900px){
@@ -205,52 +90,49 @@
   }
 }
 
-/* ===== Grid / foto ===== */
-/* Evitar que el contenido empuje hacia abajo */
+/* Grid interno */
 .hero__grid{
   display:grid;
   grid-template-columns: 1.05fr .95fr;
   align-items:end;
   gap:clamp(1.25rem, 3vw, 2rem);
-  margin-bottom: 0;               /* ← asegura cero */
+  margin-bottom: 0; /* evita empuje inferior */
 }
+
+/* Figura / foto */
 .hero__figure{
   position:relative;
   display:flex;
   justify-content:center;
   align-items:flex-end;
 }
-/* La sombra de la foto no debe “simular” hueco: mantenerla pero no hay espacio real */
 .hero__photo{
   display:block;
   height:min(68vh,560px);
-  width:auto;
-  filter:drop-shadow(0 12px 28px rgba(0,0,0,.18));
+  width:auto; /* no deformar */
+  filter:drop-shadow(0 12px 28px rgba(0,0,0,.18)); /* sombra sin crear hueco real */
 }
 
-/* ===== Texto del hero ===== */
-/* El bloque de texto no agrega altura al final del hero */
+/* Texto */
 .hero__text{
   align-self: end;
   padding-left: clamp(1rem, 3vw, 2rem);
-  padding-bottom: 0;              /* ← antes tenía padding-bottom */
+  padding-bottom: 0; /* evita sumar altura al final */
   max-width: 32ch;
   display: grid;
   gap: clamp(.6rem, 1.2vw, 1rem);
 }
 .hero__title{
- 
   color: var(--color-text, #3a3a3a);
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1.06;
   letter-spacing: .3px;
-  margin: 0;                                /* el espacio lo da el gap del contenedor */
-  max-width: 12ch;                          /* 3 líneas: DRA./DENISSE/MAYORGA */
+  margin: 0;
+  max-width: 12ch;
   font-size: clamp(2.4rem, 3.4vw, 3.6rem);
 }
 .hero__subtitle{
-  
   color: var(--color-text, #3a3a3a);
   opacity: .95;
   font-weight: 500;
@@ -260,14 +142,12 @@
   max-width: 32ch;
   font-size: clamp(1rem, 1.2vw, 1.125rem);
   text-align: center;
-
-  /* evita cortes feos */
   white-space: normal;
   word-break: keep-all;
   overflow-wrap: normal;
 }
 
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 900px){
   .hero__grid{ grid-template-columns:1fr; }
   .hero__figure{ order:-1; justify-content:flex-end; }
@@ -281,49 +161,30 @@
   .hero__subtitle{ font-size: clamp(.95rem, 3.2vw, 1rem); }
 }
 
-/* Desktop grande (tope tipo Canva) */
+/* Desktop grande */
 @media (min-width: 1200px){
   .hero__title{ font-size: 60px; }
   .hero__subtitle{ font-size: 18px; }
 }
 
-/* === Colocar el TÍTULO en el centro vertical de la franja crema
-       y al 25% horizontal desde la izquierda ==================== */
-
-/* “perillas” para mover rápido si quieres ajustar luego */
+/* Posicionado fino del título y subtítulo en desktop */
 :root{
-  --title-x: 25%;                        /* 25% = cuarto izquierdo */
-  --title-y: calc(var(--hero-cut) / 2);  /* mitad de la franja crema */
+  --title-x: 25%;
+  --title-y: calc(var(--hero-cut) / 2);
 }
-
 .hero__title{
-  position: absolute;             /* se sale del flujo para colocar exacto */
+  position: absolute;
   left: var(--title-x);
   top: var(--title-y);
-  transform: translate(-50%, -50%);  /* centra el bloque en ese punto */
-  margin: 0;                         /* sin márgenes extra */
-  max-width: 12ch;                   /* mantiene 3 líneas */
-  z-index: 0;                        /* sobre el fondo */
+  transform: translate(-50%, -50%);
+  margin: 0;
+  max-width: 12ch;
+  z-index: 0;
 }
-
-/* En mobile vuelve al flujo normal para que sea legible */
-@media (max-width: 900px){
-  .hero__title{
-    position: static;
-    transform: none;
-    margin: 0 0 .75rem;
-    max-width: 14ch;
-  }
-}
-
-/* === Colocar el PÁRRAFO en el centro vertical de la franja turquesa
-       y al 25% horizontal desde la izquierda ==================== */
-
 :root{
   --subtitle-x: 25%;
-  --subtitle-y: calc((var(--hero-cut) + 100%) / 2); /* centro de la menta */
+  --subtitle-y: calc((var(--hero-cut) + 100%) / 2);
 }
-
 .hero__subtitle{
   position: absolute;
   left: var(--subtitle-x);
@@ -331,16 +192,21 @@
   transform: translate(-50%, -50%);
   margin: 0;
   max-width: 34ch;
-  text-align: center;  /* centrado visual */
+  text-align: center;
   z-index: 0;
 }
-
 @media (max-width: 900px){
+  .hero__title{
+    position: static;
+    transform: none;
+    margin: 0 0 .75rem;
+    max-width: 14ch;
+  }
   .hero__subtitle{
     position: static;
     transform: none;
     max-width: 28ch;
-    text-align: left;   /* o center si prefieres en móvil */
+    text-align: left;
     margin: 0 0 .75rem 0;
   }
 }
