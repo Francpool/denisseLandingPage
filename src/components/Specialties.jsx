@@ -1,31 +1,37 @@
 import React from "react";
 import "../styles/specialties.css";
 
+import imgApetito from "../assets/img/apetito.png";
+import imgHepato from "../assets/img/hepato-pancreas.png";
+import imgGastro from "../assets/img/gastro-pediatrico.png";
+import imgIntolerancer from "../assets/img/intolerancias.png";
+import imgAlergias from "../assets/img/alergias.png";
+
 // Puedes reemplazar src por tus imágenes reales en /src/assets/img/areas/
 const AREAS = [
   {
     title: "Nutrición y Trastornos del Apetito",
-    src: "/src/assets/img/apetito.png",
+    src: imgApetito,
     alt: "Nutrición y Trastornos del Apetito",
   },
   {
     title: "Enfermedades Hepatobiliares y de Páncreas",
-    src: "/src/assets/img/hepato-pancreas.png",
+    src: imgHepato,
     alt: "Enfermedades Hepatobiliares y de Páncreas",
   },
   {
     title: "Enfermedades Gastrointestinales de Niños y Adolescentes",
-    src: "/src/assets/img/gastro-pediatrico.png",
+    src: imgGastro,
     alt: "Enfermedades Gastrointestinales Pediátricas",
   },
   {
     title: "Intolerancias alimentarias",
-    src: "/src/assets/img/intolerancias.png",
+    src: imgIntolerancer,
     alt: "Intolerancias alimentarias",
   },
   {
     title: "Alergias",
-    src: "/src/assets/img/alergias.png",
+    src: imgAlergias,
     alt: "Alergias",
   },
 ];
