@@ -1,0 +1,190 @@
+.faq {
+    position: relative;
+    min-height: 80vh;
+    /* Adjust based on content */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: -1px;
+    /* seamless */
+}
+
+/* Background Split */
+.faq__bg-split {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    z-index: -2;
+}
+
+.faq__bg-left {
+    width: 40%;
+    background-color: var(--color-cream);
+}
+
+.faq__bg-right {
+    width: 60%;
+    background-color: var(--color-mint);
+}
+
+/* Container */
+.faq__container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.2fr;
+    /* Text | Image | List */
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Title Area */
+.faq__left {
+    position: relative;
+    z-index: 1;
+}
+
+.faq__title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    color: var(--color-text);
+}
+
+/* Blob behind title highlight */
+.faq__title-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.faq__highlight {
+    position: relative;
+    z-index: 1;
+}
+
+.faq__highlight::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background-color: #D2EAE7;
+    /* Menta blob? Or maybe darker mint? */
+    /* Actually reference shows a mintish blob. Since left bg is cream, mint stands out */
+    background: var(--color-mint);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    /* organic shape */
+    transform: translate(0, -50%);
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.faq__decor-ring {
+    width: 150px;
+    height: 150px;
+    border: 15px solid #FCE4EC;
+    /* Light pink ring */
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    z-index: -1;
+}
+
+/* Image Center */
+.faq__center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.faq__img {
+    width: 120%;
+    /* Slight overlap */
+    max-width: 500px;
+    height: auto;
+    transform: translateY(20px);
+    /* Push down slightly if needed */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+/* Right List */
+.faq__right {
+    padding-left: 2rem;
+}
+
+.faq__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.faq__item {
+    display: flex;
+    align-items: center;
+    /* Center vertically with bullet */
+    gap: 1rem;
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+    color: var(--color-text);
+    line-height: 1.4;
+}
+
+.faq__bullet {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-pink);
+    border-radius: 50%;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .faq {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 3rem;
+    }
+
+    .faq__bg-split {
+        flex-direction: column;
+    }
+
+    .faq__bg-left {
+        width: 100%;
+        height: 40%;
+    }
+
+    .faq__bg-right {
+        width: 100%;
+        height: 60%;
+    }
+
+    .faq__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-top: 3rem;
+    }
+
+    .faq__left {
+        text-align: center;
+    }
+
+    .faq__center {
+        order: 2;
+    }
+
+    .faq__right {
+        order: 3;
+        padding-left: 0;
+        padding-inline: 1rem;
+    }
+
+    .faq__img {
+        width: 80%;
+        transform: none;
+    }
+}

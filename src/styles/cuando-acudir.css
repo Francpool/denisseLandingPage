@@ -1,0 +1,133 @@
+.cuando-acudir {
+    background-color: var(--color-cream);
+    padding-block: clamp(3rem, 6vw, 5rem);
+    position: relative;
+    overflow: hidden;
+}
+
+.ca__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    position: relative;
+}
+
+.ca__icon {
+    width: clamp(40px, 6vw, 60px);
+    opacity: 0.6;
+    transform: rotate(-15deg);
+}
+
+.ca__title {
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.ca__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+}
+
+.ca__col {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 6vw, 5rem);
+    /* Space between items vertically */
+    font-family: var(--font-sans);
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    color: #555;
+}
+
+.ca__col--left {
+    align-items: flex-end;
+    /* Push text towards image */
+    text-align: right;
+}
+
+.ca__col--right {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.ca__item {
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem 0;
+}
+
+/* Highlights (Pills behind text) */
+.ca__highlight {
+    position: relative;
+    z-index: -1;
+    display: inline-block;
+}
+
+.ca__highlight::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 140%;
+    border-radius: 999px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.ca__highlight--teal::before {
+    background-color: #B2EBF2;
+    /* Light Teal */
+}
+
+.ca__highlight--pink::before {
+    background-color: #F8BBD0;
+    /* Light Pink */
+}
+
+/* Image */
+.ca__figure {
+    display: flex;
+    justify-content: center;
+}
+
+.ca__img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ca__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .ca__col {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .ca__col--left {
+        align-items: center;
+    }
+
+    .ca__col--right {
+        align-items: center;
+    }
+
+    .ca__figure {
+        order: -1;
+        /* Image first on mobile? Or kept in middle? Let's keep in middle but header above */
+    }
+}

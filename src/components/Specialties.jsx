@@ -32,28 +32,31 @@ const AREAS = [
 
 export default function Specialties() {
   return (
-    <section id="specialties" className="container specialties">
-      {/* Columna izquierda */}
-      <aside className="specialties__aside">
-        <span className="specialties__pill" aria-hidden="true"></span>
-        <h2 className="specialties__title libre-baskerville-bold">
-          Brindamos atención especializada,
-          evaluaciones y servicios médicos
-          en las siguientes áreas:
-        </h2>
-      </aside>
+    <section id="specialties" className="specialties">
+      <div className="specialties__split">
+        {/* Lado Izquierdo: Texto */}
+        <div className="specialties__aside">
+          <div className="specialties__content-wrapper">
+             <h2 className="specialties__title poppins-medium">
+              Brindamos atención especializada, evaluaciones y servicios médicos en las siguientes áreas:
+            </h2>
+          </div>
+        </div>
 
-      {/* Rejilla derecha */}
-      <div className="specialties__grid">
-        {AREAS.map(({ title, src, alt }, idx) => (
-          <article className="specialty" key={idx}>
-            <div className="specialty__photo">
-              {/* Fallback si aún no pones la imagen */}
-              {src ? <img src={src} alt={alt} loading="lazy" /> : <div className="specialty__placeholder" />}
-            </div>
-            <div className="specialty__label poppins-medium">{title}</div>
-          </article>
-        ))}
+        {/* Lado Derecho: Grid */}
+        <div className="specialties__main">
+          <div className="specialties__grid">
+            {AREAS.map(({ title, src, alt }, idx) => (
+              <article className="specialty" key={idx}>
+                <div className="specialty__photo">
+                  {/* Fallback si aún no pones la imagen */}
+                  {src ? <img src={src} alt={alt} loading="lazy" /> : <div className="specialty__placeholder" />}
+                </div>
+                <div className="specialty__label poppins-medium">{title}</div>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

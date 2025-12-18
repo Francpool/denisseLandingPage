@@ -1,0 +1,202 @@
+.ubicacion {
+    background-color: #FBCEE0;
+    /* Pink background mostly */
+    /* Gradient or solid? The reference has a pink background similar to 'Estudios' but maybe slightly different tone. */
+    background: linear-gradient(to bottom, #FBCEE0 0%, #F8BBD0 100%);
+    background-color: #F9CAD8;
+    padding-block: clamp(4rem, 8vw, 6rem);
+    position: relative;
+    overflow: hidden;
+    margin-top: -1px;
+}
+
+.ubicacion__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    position: relative;
+    z-index: 1;
+}
+
+/* Left Side */
+.ubicacion__info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ubicacion__title {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    color: var(--color-text);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Teal shape behind 'Dónde' or simply as background like in other titles */
+.ubicacion__title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 60px;
+    height: 60px;
+    background-color: #D2EAE7;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translateY(-50%);
+    opacity: 0.7;
+}
+
+.ubicacion__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ubicacion__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.ubicacion__details {
+    flex: 1;
+}
+
+.ubicacion__city {
+    font-size: 1.8rem;
+    color: #555;
+    /* Dark grey/purple tone */
+    margin: 0 0 0.5rem 0;
+}
+
+.ubicacion__address {
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    color: #444;
+    line-height: 1.4;
+}
+
+/* Map Column Wrapper */
+.ubicacion__map-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ubicacion__mini-map {
+    width: 100px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.ubicacion__mini-map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ubicacion__s-circle {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    color: #D2EAE7;
+    /* Icon color */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-family: var(--font-sans);
+}
+
+/* Right Side */
+.ubicacion__visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.ubicacion__illustration {
+    width: 100%;
+    max-width: 450px;
+}
+
+.ubicacion__illustration img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.ubicacion__cta {
+    background-color: #FEF9C3;
+    /* Yellowish/Cream */
+    background-color: #FDF9D9;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+}
+
+.ubicacion__cta:hover {
+    transform: scale(1.05);
+}
+
+.ubicacion__phone-icon {
+    font-size: 1.2rem;
+    color: #81C784;
+    /* Green phone icon */
+}
+
+.ubicacion__cta-text {
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+    letter-spacing: 0.5px;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ubicacion__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .ubicacion__info {
+        order: 1;
+        /* Text first? */
+    }
+
+    .ubicacion__visual {
+        order: 2;
+    }
+
+    .ubicacion__item {
+        flex-direction: column-reverse;
+        /* Map below text or side by side? Side by side is fine on mobile usually */
+        align-items: center;
+        text-align: center;
+    }
+
+    .ubicacion__mini-map {
+        width: 100%;
+        /* Full width map on mobile? Or just bigger */
+        max-width: 200px;
+        height: 120px;
+    }
+}

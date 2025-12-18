@@ -1,0 +1,136 @@
+.estudios {
+    background-color: #FBCEE0;
+    /* Pink background from reference */
+    /* Or use var(--color-pink) if it matches, but reference looks a bit deeper pink/rose */
+    background-color: #F8BBD0;
+    /* A bit lighter maybe? Let's use a custom sweet pink */
+    background-color: #FADADD;
+    /* Classic pale pink */
+    /* Actually let's just use the variable if close, or a hardcoded pleasant pink */
+    background-color: #F9CAD8;
+    padding-block: clamp(4rem, 8vw, 6rem);
+    position: relative;
+    overflow: hidden;
+    margin-top: -1px;
+}
+
+.estudios__header {
+    margin-bottom: clamp(3rem, 5vw, 4rem);
+    position: relative;
+    z-index: 2;
+}
+
+.estudios__title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.estudios__highlight {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.estudios__highlight::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130%;
+    height: 130%;
+    /* Big blob behind 'Estudios' */
+    background-color: #D2EAE7;
+    /* Mint contrast blob */
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.estudios__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1rem, 3vw, 2rem) clamp(2rem, 5vw, 4rem);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.estudios__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.estudios__card--3 {
+    grid-column: 1 / -1;
+    /* Center the 3rd one */
+    width: 60%;
+    /* Limit width to look like the top ones roughly */
+    margin: 0 auto;
+    /* Center horizontally */
+}
+
+.estudios__label {
+    background: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    color: var(--color-text);
+    text-align: center;
+}
+
+.estudios__figure {
+    border-radius: 12px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    aspect-ratio: 16/9;
+    /* Or adjust based on image */
+}
+
+.estudios__figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Decor Rings */
+.estudios__ring {
+    position: absolute;
+    border: 40px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.estudios__ring--top-right {
+    top: -100px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+}
+
+.estudios__ring--bottom-left {
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    border-width: 60px;
+}
+
+
+/* Responsive */
+@media (max-width: 700px) {
+    .estudios__grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .estudios__card--3 {
+        grid-column: auto;
+        width: 100%;
+    }
+}

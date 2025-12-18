@@ -1,86 +1,110 @@
 /* Sección */
 .specialties {
-  font-family: var(--font-sans); /* Poppins en todo el componente */
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: var(--space-6);
-  padding-block: clamp(3rem, 6vw, 5rem); /* ritmo vertical tipo Hero */
-   margin-top: -8px;   /* ← solape ínfimo para borrar cualquier “costura” visual */
-}
-
-/* Columna izquierda (bloque menta) */
-.specialties__aside {
-  position: relative;
-  background: var(--color-mint);
-  border-radius: var(--radius);
-  padding: clamp(1rem, 2vw, 1.5rem);
-  display: flex;
-  justify-content: center;  /* centra horizontal */
-  align-items: center;       /* centra vertical */
-  text-align: left;
-  overflow: hidden;          /* franja contenida dentro del bloque */
-}
-
-/* Franja beige detrás del texto */
-.specialties__pill {
-  position: absolute;
-  left: clamp(1rem, 2vw, 2rem);
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(40px, 4vw, 60px);  /* más ancha */
-  height: 80%;
-  background: var(--color-cream);
-  border-radius: 50px;
-  z-index: 0;                     /* por detrás del texto */
-}
-
-/* Título dentro del bloque menta */
-.specialties__title {
-  position: relative;
-  z-index: 1; /* sobre la franja */
+  font-family: var(--font-sans);
+  width: 100%;
   margin: 0;
-  font-size: clamp(1.25rem, 2.6vw, 2.25rem);
-  line-height: 1.2;
-  color: var(--color-text);
-  font-weight: 600; /* look Poppins semibold */
+  margin-top: -1px;
+  /* Avoid gaps */
+  padding: 0;
+  /* Ensure it sits below hero without gaps */
 }
 
-/* === Grid de tarjetas ===
-   6 columnas invisibles; cada tarjeta ocupa 2.
-   Fila 1: [1–2][3–4][5–6]
-   Fila 2 centrada: [2–3][4–5] */
+/* Split Layout */
+.specialties__split {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 80vh;
+}
+
+@media (min-width: 900px) {
+  .specialties__split {
+    grid-template-columns: 4fr 6fr;
+    /* 40% texto, 60% grid aproximadamente */
+  }
+}
+
+/* === Lado Izquierdo (Texto) === */
+.specialties__aside {
+  background-color: var(--color-mint);
+  /* Fondo menta */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(3rem, 5vw, 5rem);
+  color: var(--color-text);
+}
+
+.specialties__content-wrapper {
+  max-width: 400px;
+}
+
+.specialties__title {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 500;
+  /* poppins medium */
+  line-height: 1.3;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* === Lado Derecho (Grid) === */
+.specialties__main {
+  background-color: #fff;
+  /* Fondo blanco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(2rem, 4vw, 4rem);
+}
+
+/* === Grid de tarjetas === */
+/* Conservamos la lógica de 6 columnas para centrar 3 arriba y 2 abajo */
 .specialties__grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
-  column-gap: clamp(1rem, 2vw, 1.5rem);
-  row-gap: clamp(1.25rem, 3vw, 2rem);
+  column-gap: clamp(1rem, 1.5vw, 1.5rem);
+  row-gap: clamp(1.5rem, 2.5vw, 2.5rem);
   justify-items: center;
   align-items: start;
+  width: 100%;
+  max-width: 800px;
+  /* Limitamos ancho dentro de la columna derecha */
 }
 
 .specialty {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .75rem;
-  grid-column: span 2; /* cada tarjeta ocupa 2 columnas */
+  gap: 1rem;
+  grid-column: span 2;
+  /* cada tarjeta ocupa 2 columnas de 6 */
+  text-align: center;
 }
 
-/* Colocación centrada de la segunda fila */
-.specialty:nth-child(4) { grid-column: 2 / span 2; }
-.specialty:nth-child(5) { grid-column: 4 / span 2; }
+/* Centrado de la segunda fila (elementos 4 y 5) */
+.specialty:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.specialty:nth-child(5) {
+  grid-column: 4 / span 2;
+}
 
 /* Imagen circular */
 .specialty__photo {
-  width: clamp(120px, 22vw, 220px);
+  width: clamp(100px, 14vw, 180px);
+  /* Ajustado para el espacio disponible */
   aspect-ratio: 1 / 1;
-  border-radius: 999px;
+  border-radius: 50%;
   overflow: hidden;
   background: #f3f4f6;
-  display: grid;
-  place-items: center;
+  display: flex;
+  /* grid or flex to center placeholder */
+  justify-content: center;
+  align-items: center;
   box-shadow: var(--shadow-1);
 }
+
 .specialty__photo img {
   width: 100%;
   height: 100%;
@@ -88,23 +112,56 @@
   display: block;
 }
 
-/* Etiqueta */
 .specialty__label {
   background: #FAEDEA;
-  border-radius: 12px;
-  padding: .5rem .75rem;
-  text-align: center;
-  font-size: clamp(.9rem, 1.6vw, 1rem);
+  /* Fondo rosita claro */
+  border-radius: 8px;
+  padding: .5rem 1rem;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  line-height: 1.4;
   font-weight: 400;
-  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 900px) {
-  .specialties { grid-template-columns: 1fr; }
-  .specialties__grid { grid-template-columns: repeat(2, 1fr); }
-  .specialty { grid-column: auto; } /* layout natural 2 col */
+  /* En móviles, la columna de texto arriba, grid abajo (o viceversa según diseño) */
+  /* layout es 1fr por defecto */
+
+  .specialties__grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* Pasamos a 2 columnas simples */
+    max-width: 500px;
+  }
+
+  .specialty {
+    grid-column: auto;
+    /* Reset span */
+  }
+
+  .specialty:nth-child(4),
+  .specialty:nth-child(5) {
+    grid-column: auto;
+    /* Reset offset */
+  }
+
+  /* Si queremos que el último elemento (5) quede centrado en modo 2-col, podríamos usar span 2 */
+  .specialty:nth-child(5) {
+    grid-column: 1 / -1;
+    /* Ocupa todo el ancho si queremos centrarlo solo */
+    justify-self: center;
+    width: 50%;
+    /* limit width if needed */
+  }
 }
-@media (max-width: 600px) {
-  .specialties__grid { grid-template-columns: 1fr; }
+
+@media (max-width: 500px) {
+  .specialties__grid {
+    grid-template-columns: 1fr;
+    /* 1 columna en móviles muy chicos */
+  }
+
+  .specialty:nth-child(5) {
+    width: 100%;
+  }
 }

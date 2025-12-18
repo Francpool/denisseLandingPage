@@ -37,7 +37,7 @@
   /* Aire solo arriba; cero abajo para no dejar “salto” */
   padding-top: clamp(2rem, 6vw, 4rem);
   padding-bottom: 0;
-  min-height: clamp(520px, 65vh, 680px);
+  min-height: 100svh;
   margin-bottom: 0;
 }
 
