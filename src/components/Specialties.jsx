@@ -5,27 +5,27 @@ import "../styles/specialties.css";
 const AREAS = [
   {
     title: "Nutrición y Trastornos del Apetito",
-    src: "/src/assets/img/areas/apetito.png",
+    src: "/src/assets/img/apetito.png",
     alt: "Nutrición y Trastornos del Apetito",
   },
   {
     title: "Enfermedades Hepatobiliares y de Páncreas",
-    src: "/src/assets/img/areas/hepato-pancreas.png",
+    src: "/src/assets/img/hepato-pancreas.png",
     alt: "Enfermedades Hepatobiliares y de Páncreas",
   },
   {
     title: "Enfermedades Gastrointestinales de Niños y Adolescentes",
-    src: "/src/assets/img/areas/gastro-pediatrico.png",
+    src: "/src/assets/img/gastro-pediatrico.png",
     alt: "Enfermedades Gastrointestinales Pediátricas",
   },
   {
     title: "Intolerancias alimentarias",
-    src: "/src/assets/img/areas/intolerancias.png",
+    src: "/src/assets/img/intolerancias.png",
     alt: "Intolerancias alimentarias",
   },
   {
     title: "Alergias",
-    src: "/src/assets/img/areas/alergias.png",
+    src: "/src/assets/img/alergias.png",
     alt: "Alergias",
   },
 ];
@@ -37,7 +37,7 @@ export default function Specialties() {
         {/* Lado Izquierdo: Texto */}
         <div className="specialties__aside">
           <div className="specialties__content-wrapper">
-             <h2 className="specialties__title poppins-medium">
+            <h2 className="specialties__title poppins-medium">
               Brindamos atención especializada, evaluaciones y servicios médicos en las siguientes áreas:
             </h2>
           </div>
