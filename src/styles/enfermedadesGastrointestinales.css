@@ -1,0 +1,146 @@
+.gastro-page {
+    background-color: #FAEDEA;
+    /* Light pink/cream background matching reference */
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: #4a4a4a;
+}
+
+/* Image Side - Absolute Left */
+.gastro-page__image-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 45vw;
+    /* Restore width */
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.gastro-page__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Don't zoom/crop */
+    object-position: bottom left;
+    /* Anchor to bottom */
+}
+
+.gastro-page__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-end;
+    /* Push content to the right */
+}
+
+.gastro-page__content-wrapper {
+    width: 55%;
+    /* Occupy the right side */
+    position: relative;
+    padding-left: 2rem;
+}
+
+.gastro-page__title {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    /* Reduced size */
+    color: #444;
+    /* Dark gray */
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+/* Using a slightly different style for "de Niños y Adolescentes" part if needed, 
+   but one H1 is semantic. Reference shows slightly different font weights/colors maybe. */
+
+.gastro-page__text {
+    font-size: 1rem;
+    /* Reduced size */
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.gastro-page__subtitle {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.gastro-page__list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.gastro-page__list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.gastro-page__list li::before {
+    content: "•";
+    color: #444;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+
+/* Decorative Blobs - Pinker tone */
+.gastro-page__blob {
+    position: absolute;
+    background-color: rgba(246, 213, 221, 0.6);
+    /* Slightly darker pink blob */
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.gastro-page__blob--top-right {
+    width: 15rem;
+    height: 15rem;
+    top: -5rem;
+    right: -5rem;
+}
+
+.gastro-page__blob--bottom-left {
+    width: 20rem;
+    height: 20rem;
+    bottom: -5rem;
+    left: -15rem;
+    opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+    .gastro-page__image-side {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        margin-bottom: 2rem;
+    }
+
+    .gastro-page__container {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .gastro-page__content-wrapper {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .gastro-page__img {
+        object-position: center top;
+    }
+}

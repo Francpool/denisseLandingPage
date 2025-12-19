@@ -1,0 +1,123 @@
+.hepato-page {
+    background-color: #d0efeb;
+    /* Same mint green base */
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: #4a4a4a;
+}
+
+.hepato-page__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hepato-page__title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: #333;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.hepato-page__text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin-bottom: 3rem;
+    text-align: justify;
+}
+
+.hepato-page__columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hepato-page__subtitle {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.hepato-page__list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.hepato-page__list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hepato-page__list li::before {
+    content: "•";
+    color: #333;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.hepato-page__img-col {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hepato-page__img {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+    /* Rounded corners strictly like reference */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    /* Fallback */
+}
+
+/* Decorative Blobs */
+.hepato-page__blob {
+    position: absolute;
+    background-color: rgba(238, 206, 214, 0.7);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hepato-page__blob--top-left {
+    width: 8rem;
+    height: 8rem;
+    top: -2rem;
+    left: -2rem;
+}
+
+.hepato-page__blob--bottom-left {
+    width: 15rem;
+    height: 15rem;
+    bottom: -5rem;
+    left: -5rem;
+    opacity: 0.5;
+}
+
+.hepato-page__blob--bottom-right {
+    width: 20rem;
+    height: 20rem;
+    bottom: -5rem;
+    right: -5rem;
+    z-index: -2;
+}
+
+@media (max-width: 900px) {
+    .hepato-page__columns {
+        grid-template-columns: 1fr;
+    }
+
+    .hepato-page__img-col {
+        margin-top: 2rem;
+    }
+}

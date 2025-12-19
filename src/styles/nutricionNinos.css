@@ -1,0 +1,173 @@
+.nutricion-ninos {
+    background-color: #d0efeb;
+    /* Mint green background matching reference */
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    color: #4a4a4a;
+    /* Dark gray text */
+}
+
+.nutricion-ninos__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header Section */
+.nutricion-ninos__header {
+    max-width: 900px;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.nutricion-ninos__title {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.nutricion-ninos__text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+}
+
+/* Content Row: List + Image */
+/* Content Row: List */
+.nutricion-ninos__content-row {
+    display: block;
+    position: relative;
+}
+
+.nutricion-ninos__list-col {
+    max-width: 55%;
+    /* Limit text width so it doesn't go under image */
+    position: relative;
+    z-index: 10;
+    /* Ensure text is above image layer */
+}
+
+.nutricion-ninos__subtitle {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.nutricion-ninos__list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.nutricion-ninos__list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.nutricion-ninos__list li::before {
+    content: "•";
+    color: #333;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Image Column */
+/* Image Side - Absolute to Section */
+.nutricion-ninos__image-side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40vw;
+    /* Reduced width to address "too big" */
+    height: 100%;
+    pointer-events: none;
+    /* Allow clicking through if needed */
+    overflow: hidden;
+    /* Ensure image doesn't flow out */
+    z-index: 5;
+    /* Behind text if necessary, or beside it */
+}
+
+/* Image styling */
+.nutricion-ninos__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right 100%;
+    /* Align to bottom to push the central bowl UP towards top */
+    /* transform removed to fix 'too big' issue */
+}
+
+@media (max-width: 1024px) {
+
+    /* On tablets/smaller screens, maybe show image at bottom or let it be background? */
+    .nutricion-ninos__image-side {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        margin-top: 2rem;
+    }
+
+    .nutricion-ninos__list-col {
+        max-width: 100%;
+    }
+}
+
+/* Decorative Blobs */
+.nutricion-ninos__blob {
+    position: absolute;
+    background-color: rgba(238, 206, 214, 0.7);
+    /* Pinkish transparent */
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.nutricion-ninos__blob--top-left {
+    width: 15rem;
+    height: 15rem;
+    top: -5rem;
+    left: -5rem;
+}
+
+.nutricion-ninos__blob--bottom-left {
+    width: 20rem;
+    height: 20rem;
+    bottom: -5rem;
+    left: -10rem;
+}
+
+.nutricion-ninos__blob--bottom-right {
+    width: 25rem;
+    height: 25rem;
+    bottom: -10rem;
+    right: -5rem;
+    background-color: rgba(238, 206, 214, 0.5);
+}
+
+
+@media (max-width: 768px) {
+    .nutricion-ninos__content-row {
+        flex-direction: column;
+
+    }
+
+    .nutricion-ninos__title {
+        font-size: 2rem;
+    }
+
+    .nutricion-ninos__image-side {
+        width: 100%;
+        height: auto;
+    }
+}

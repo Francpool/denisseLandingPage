@@ -1,0 +1,139 @@
+.intolerancias-page {
+    background-color: #FFF0F0;
+    /* Soft pink background matching reference */
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: #4a4a4a;
+}
+
+/* Image Side - Absolute Right */
+.intolerancias-page__image-side {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 45vw;
+    /* Half screen image */
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.intolerancias-page__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.intolerancias-page__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    /* Keep content to the left */
+}
+
+.intolerancias-page__content-wrapper {
+    width: 50%;
+    /* Left half */
+    position: relative;
+    padding-right: 2rem;
+}
+
+.intolerancias-page__title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: #444;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+}
+
+.intolerancias-page__text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.intolerancias-page__subtitle {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.intolerancias-page__list {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.intolerancias-page__list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.intolerancias-page__list li::before {
+    content: "•";
+    color: #444;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+
+/* Decorative Blobs */
+.intolerancias-page__blob {
+    position: absolute;
+    background-color: rgba(245, 200, 210, 0.5);
+    /* Pink decorative blob */
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.intolerancias-page__blob--top-left {
+    width: 8rem;
+    height: 8rem;
+    top: -2rem;
+    left: -2rem;
+}
+
+.intolerancias-page__blob--bottom-left {
+    width: 20rem;
+    height: 20rem;
+    bottom: -10rem;
+    left: -5rem;
+}
+
+@media (max-width: 1024px) {
+    .intolerancias-page__image-side {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        margin-top: 2rem;
+        order: 2;
+        /* Move image to bottom */
+    }
+
+    .intolerancias-page {
+        /* Need flex to reorder if using absolute, but standard block flow is easier */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .intolerancias-page__container {
+        width: 100%;
+    }
+
+    .intolerancias-page__content-wrapper {
+        width: 100%;
+        padding-right: 0;
+    }
+}
