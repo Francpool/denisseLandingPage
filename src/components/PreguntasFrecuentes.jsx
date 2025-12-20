@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/preguntas-frecuentes.css";
 import babyImage from "../assets/img/Preguntasfre.png";
 
@@ -43,16 +44,16 @@ export default function PreguntasFrecuentes() {
                         {/* Static list items for control over individual links */}
                         <div className="faq__item poppins-regular">
                             <span className="faq__bullet"></span>
-                            <a href="/test-alergia-leche" className="faq__link">
+                            <Link to="/test-alergia-leche" className="faq__link">
                                 ¿Que es Test de alergia a proteina de leche de vaca?
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="faq__item poppins-regular">
                             <span className="faq__bullet"></span>
-                            <a href="/materia-fecal" className="faq__link">
+                            <Link to="/materia-fecal" className="faq__link">
                                 ¿Cómo saber si la materia fecal es normal?
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="faq__item poppins-regular">
