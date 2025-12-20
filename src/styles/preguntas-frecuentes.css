@@ -130,6 +130,18 @@
     font-size: clamp(0.9rem, 1.1vw, 1.1rem);
     color: var(--color-text);
     line-height: 1.4;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.faq__item:hover {
+    transform: scale(1.05);
+}
+
+.faq__link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
 }
 
 .faq__bullet {

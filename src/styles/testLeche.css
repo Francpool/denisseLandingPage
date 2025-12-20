@@ -1,0 +1,185 @@
+.test-leche {
+    background-color: #D6F0ED;
+    /* Mint background */
+    min-height: 100vh;
+    padding: 3rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #4a4a4a;
+}
+
+.test-leche__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.test-leche__header {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.test-leche__blob {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: #F8F4C5;
+    /* Yellow blob */
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.test-leche__title {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #444;
+}
+
+.test-leche__instructions {
+    background-color: #FFF0F0;
+    /* Light Pink instruction box */
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.test-leche__subtitle {
+    color: #8B5E5E;
+    /* Darker pink/brown for subtitle */
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.test-leche__table-container {
+    background-color: #FFFAF8;
+    /* Slightly off-white/pinkish bg for table */
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.test-leche__table-header {
+    display: flex;
+    background-color: white;
+    padding: 1rem;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+    border-bottom: 2px solid #eee;
+}
+
+.test-leche__row {
+    display: flex;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #eee;
+    align-items: flex-start;
+}
+
+.test-leche__row:last-child {
+    border-bottom: none;
+}
+
+.col-sintomas {
+    width: 25%;
+    padding-right: 1rem;
+    font-weight: 600;
+}
+
+.col-puntuacion-desc {
+    width: 55%;
+    padding-right: 1rem;
+    font-size: 0.9rem;
+}
+
+.col-puntuacion-input {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.score-desc span {
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.score-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.test-leche__input {
+    background-color: #F8CED9;
+    /* Pink input placeholder */
+    border: none;
+    border-radius: 8px;
+    height: 3rem;
+    width: 100%;
+    max-width: 15rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #444;
+}
+
+.test-leche__footer {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    color: #666;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .test-leche__table-header {
+        display: none;
+    }
+
+    .test-leche__row {
+        flex-direction: column;
+        border-bottom: 4px solid #D6F0ED;
+    }
+
+    .col-sintomas,
+    .col-puntuacion-desc,
+    .col-puntuacion-input {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+.test-leche__interpretation {
+    background-color: #FFF0F0;
+    /* Light Pink instruction box */
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    /* Left aligned text per reference */
+}
+
+.test-leche__subtitle-interp {
+    color: #444;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.test-leche__interp-text {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    color: #555;
+    font-size: 1rem;
+}

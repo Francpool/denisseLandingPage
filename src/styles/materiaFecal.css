@@ -1,0 +1,142 @@
+.fecal-page {
+    background-color: #F8CED9;
+    /* Pink background */
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fecal-page__container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.fecal-page__col-left {
+    width: 30%;
+    padding-right: 1rem;
+}
+
+.fecal-page__title-wrapper {
+    position: relative;
+    padding: 1rem;
+}
+
+.fecal-page__title-blob {
+    position: absolute;
+    top: 50%;
+    left: -1rem;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 120%;
+    background-color: #F8F4C5;
+    /* Yellow blob */
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.fecal-page__title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    color: #444;
+    position: relative;
+    z-index: 2;
+}
+
+.fecal-page__col-center {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.fecal-page__img-child {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+}
+
+.fecal-page__col-right {
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fecal-page__card-bristol {
+    background-color: #FFF8E7;
+    /* Light cream card bg from image */
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+}
+
+.fecal-page__img-bristol {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Background Blobs */
+.fecal-page__blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.fecal-page__blob-top-left {
+    position: absolute;
+    top: -5rem;
+    left: -5rem;
+    width: 25rem;
+    height: 25rem;
+    border: 3rem solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.fecal-page__blob-bottom-left {
+    position: absolute;
+    bottom: -10rem;
+    left: 5rem;
+    width: 30rem;
+    height: 30rem;
+    border: 4rem solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+    .fecal-page__container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .fecal-page__col-left,
+    .fecal-page__col-center,
+    .fecal-page__col-right {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .fecal-page__title-blob {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+    }
+}

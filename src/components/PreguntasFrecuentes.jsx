@@ -39,14 +39,27 @@ export default function PreguntasFrecuentes() {
 
                 {/* Right Side: Questions */}
                 <div className="faq__right">
-                    <ul className="faq__list">
-                        {QUESTIONS.map((q, idx) => (
-                            <li key={idx} className="faq__item poppins-regular">
-                                <span className="faq__bullet"></span>
-                                <p>{q}</p>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="faq__list">
+                        {/* Static list items for control over individual links */}
+                        <div className="faq__item poppins-regular">
+                            <span className="faq__bullet"></span>
+                            <a href="/test-alergia-leche" className="faq__link">
+                                ¿Que es Test de alergia a proteina de leche de vaca?
+                            </a>
+                        </div>
+
+                        <div className="faq__item poppins-regular">
+                            <span className="faq__bullet"></span>
+                            <a href="/materia-fecal" className="faq__link">
+                                ¿Cómo saber si la materia fecal es normal?
+                            </a>
+                        </div>
+
+                        <div className="faq__item poppins-regular">
+                            <span className="faq__bullet"></span>
+                            <p>¿Cuáles son los signos para saber si tu hijo puede tener alguna alergia?</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

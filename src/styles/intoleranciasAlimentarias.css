@@ -137,3 +137,68 @@
         padding-right: 0;
     }
 }
+
+/* Section Two Styles */
+.intolerancias-page__section-two {
+    background-color: #FFF0F0;
+    /* Same background */
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    color: #4a4a4a;
+}
+
+.intolerancias-page__image-side-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 45vw;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.intolerancias-page__content-wrapper-right {
+    width: 50%;
+    margin-left: auto;
+    /* Push to right */
+    position: relative;
+    padding-left: 2rem;
+}
+
+.intolerancias-page__blob--bottom-right {
+    width: 25rem;
+    height: 25rem;
+    bottom: -12rem;
+    right: -5rem;
+    position: absolute;
+    background-color: rgba(245, 200, 210, 0.5);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+    .intolerancias-page__section-two {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .intolerancias-page__image-side-left {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        order: 2;
+        /* Image on bottom for mobile */
+        margin-top: 2rem;
+    }
+
+    .intolerancias-page__content-wrapper-right {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+    }
+}

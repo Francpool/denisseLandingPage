@@ -39,7 +39,7 @@ const AREAS = [
     title: "Alergias",
     src: imgAlergias,
     alt: "Alergias",
-    path: "#",
+    path: "/alergias",
   },
 ];
 
