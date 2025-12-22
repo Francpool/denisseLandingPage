@@ -1,0 +1,144 @@
+.pruebas-alergia {
+    background-color: #D6F0ED;
+    /* Mint background */
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: #4a4a4a;
+}
+
+.pruebas-alergia__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Title Styling */
+.pruebas-alergia__title-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.pruebas-alergia__title-blob {
+    position: absolute;
+    top: -10%;
+    left: -20px;
+    width: 60px;
+    height: 60px;
+    background-color: #FBCEE0;
+    /* Pink blob */
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.pruebas-alergia__title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.2;
+    color: #333;
+}
+
+/* Text Content */
+.pruebas-alergia__text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.pruebas-alergia__text p {
+    margin-bottom: 1rem;
+}
+
+.pruebas-alergia__subtitle {
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+.pruebas-alergia__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pruebas-alergia__list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Image Column */
+.pruebas-alergia__image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pruebas-alergia__img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Background Decorations */
+.pruebas-alergia__blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.pruebas-alergia__blob-top-right {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 40vw;
+    height: 40vw;
+    border: 60px solid #FBCEE0;
+    /* Pink ring */
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+.pruebas-alergia__blob-bottom-left {
+    position: absolute;
+    bottom: -15%;
+    left: -10%;
+    width: 35vw;
+    height: 35vw;
+    border: 50px solid #FBCEE0;
+    /* Pink ring */
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+@media (max-width: 900px) {
+    .pruebas-alergia__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .pruebas-alergia__title-wrapper {
+        display: inline-block;
+    }
+
+    .pruebas-alergia__list {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .pruebas-alergia__image-col {
+        margin-top: 2rem;
+    }
+}

@@ -83,12 +83,19 @@
 }
 
 .estudios__figure {
-    border-radius: 12px;
-    overflow: hidden;
     width: 100%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     aspect-ratio: 16/9;
     /* Or adjust based on image */
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease;
+    position: relative;
+}
+
+.estudios__figure:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
 .estudios__figure img {
@@ -97,6 +104,14 @@
     object-fit: cover;
     display: block;
 }
+
+.estudios__figure-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+/* Overlay removed per user request */
 
 /* Decor Rings */
 .estudios__ring {

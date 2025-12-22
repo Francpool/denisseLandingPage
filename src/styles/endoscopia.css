@@ -1,0 +1,129 @@
+.endoscopia {
+    background-color: #FEF9DE;
+    /* Light yellow background */
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: #4a4a4a;
+}
+
+.endoscopia__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Title Styling */
+.endoscopia__title-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.endoscopia__title-blob {
+    position: absolute;
+    top: -10%;
+    left: -20px;
+    width: 60px;
+    height: 60px;
+    background-color: #D6F0ED;
+    /* Mint blob */
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.endoscopia__title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.2;
+    color: #333;
+}
+
+/* Text Content */
+.endoscopia__text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.endoscopia__text p {
+    margin-bottom: 1.5rem;
+}
+
+/* Image Column */
+.endoscopia__image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.endoscopia__img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Background Decorations */
+.endoscopia__blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.endoscopia__blob-top-left {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 30vw;
+    height: 30vw;
+    border: 40px solid #FBCEE0;
+    /* Pink ring */
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+.endoscopia__blob-bottom-right {
+    position: absolute;
+    bottom: -10%;
+    right: -10%;
+    width: 40vw;
+    height: 40vw;
+    border: 60px solid #FBCEE0;
+    /* Pink ring */
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+@media (max-width: 900px) {
+    .endoscopia__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .endoscopia__title-wrapper {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .endoscopia__text {
+        text-align: left;
+    }
+
+    .endoscopia__image-col {
+        margin-top: 2rem;
+    }
+}

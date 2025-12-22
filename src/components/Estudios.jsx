@@ -21,14 +21,35 @@ export default function Estudios() {
                 </div>
 
                 <div className="estudios__grid">
-                    {STUDIES.map((item, idx) => (
-                        <div className={`estudios__card estudios__card--${idx + 1}`} key={idx}>
-                            <div className="estudios__label poppins-medium">{item.label}</div>
+                    {/* Test de Hidrógeno - Linkable */}
+                    <div className="estudios__card estudios__card--1">
+                        <div className="estudios__label poppins-medium">Test de Hidrógeno</div>
+                        <a href="/test-hidrogeno" className="estudios__figure-link">
                             <div className="estudios__figure">
-                                <img src={item.img} alt={item.label} />
+                                <img src={img1} alt="Test de Hidrógeno" />
                             </div>
-                        </div>
-                    ))}
+                        </a>
+                    </div>
+
+                    {/* Endoscopia - Linkable */}
+                    <div className="estudios__card estudios__card--2">
+                        <div className="estudios__label poppins-medium">Endoscopia- Colonoscopia</div>
+                        <a href="/endoscopia" className="estudios__figure-link">
+                            <div className="estudios__figure">
+                                <img src={img2} alt="Endoscopia- Colonoscopia" />
+                            </div>
+                        </a>
+                    </div>
+
+                    {/* Pruebas de alergia - Linkable */}
+                    <div className="estudios__card estudios__card--3">
+                        <div className="estudios__label poppins-medium">Pruebas de alergia</div>
+                        <a href="/pruebas-alergia" className="estudios__figure-link">
+                            <div className="estudios__figure">
+                                <img src={img3} alt="Pruebas de alergia" />
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
 

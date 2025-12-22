@@ -1,0 +1,126 @@
+.test-hidrogeno {
+    background-color: #D6F0ED;
+    /* Mint background */
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #4a4a4a;
+}
+
+.test-hidrogeno__container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    /* Center everything mostly */
+}
+
+/* Header/Title */
+.test-hidrogeno__header {
+    position: relative;
+    display: inline-block;
+    /* To shrink wrap the blob */
+    text-align: left;
+    /* Keep title aligned naturally or center? Ref looks like title is header-like leftish or top */
+    /* Looking at ref, title is on top left */
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.test-hidrogeno__title-blob {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 80px;
+    height: 80px;
+    background-color: #F8BBD0;
+    /* Pink blob */
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.test-hidrogeno__title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: #333;
+    position: relative;
+    z-index: 2;
+}
+
+/* Card for Image */
+.test-hidrogeno__card {
+    background-color: #FBCEE0;
+    /* Pink card background */
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.test-hidrogeno__image-wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
+.test-hidrogeno__img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Description */
+.test-hidrogeno__description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Blobs */
+.test-hidrogeno__blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.test-hidrogeno__blob-top-right {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 40vw;
+    height: 40vw;
+    border: 60px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+}
+
+.test-hidrogeno__blob-bottom-left {
+    position: absolute;
+    bottom: -15%;
+    left: -10%;
+    width: 35vw;
+    height: 35vw;
+    border: 50px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .test-hidrogeno__card {
+        padding: 1.5rem;
+    }
+}

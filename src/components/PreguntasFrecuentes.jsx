@@ -58,7 +58,9 @@ export default function PreguntasFrecuentes() {
 
                         <div className="faq__item poppins-regular">
                             <span className="faq__bullet"></span>
-                            <p>¿Cuáles son los signos para saber si tu hijo puede tener alguna alergia?</p>
+                            <Link to="/signos-alergia" className="faq__link">
+                                ¿Cuáles son los signos para saber si tu hijo puede tener alguna alergia?
+                            </Link>
                         </div>
                     </div>
                 </div>

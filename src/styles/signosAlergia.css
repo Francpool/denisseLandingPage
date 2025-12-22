@@ -1,0 +1,152 @@
+.signos-alergia {
+    background-color: #FEF9DE;
+    /* Light yellow background */
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: #4a4a4a;
+}
+
+.signos-alergia__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Title Styling */
+.signos-alergia__title-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.signos-alergia__title-blob {
+    position: absolute;
+    top: -10%;
+    left: -20px;
+    width: 30%;
+    height: 120%;
+    background-color: #D6F0ED;
+    /* Clean Mint blob */
+    border-radius: 50% 40% 30% 70% / 60% 30% 70% 40%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.signos-alergia__title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    color: #333;
+}
+
+/* Text Content */
+.signos-alergia__text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.signos-alergia__text p {
+    margin-bottom: 1.5rem;
+}
+
+.signos-alergia__list {
+    list-style: none;
+    padding: 0;
+    margin-left: 1rem;
+}
+
+.signos-alergia__list li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.signos-alergia__list li::before {
+    content: "•";
+    color: #555;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Image Column */
+.signos-alergia__image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signos-alergia__img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    /* Slight rounding if desired, or none */
+    /* If the image is a cutout, no border radius needed on img tag generally, but purely visual preference */
+    object-fit: cover;
+}
+
+/* Background Decorations */
+.signos-alergia__blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.signos-alergia__blob-top-right {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 40vw;
+    height: 40vw;
+    border: 60px solid #D6F0ED;
+    /* Mint ring */
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.signos-alergia__blob-bottom-left {
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 30vw;
+    height: 30vw;
+    border: 40px solid #D6F0ED;
+    /* Mint ring */
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+    .signos-alergia__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .signos-alergia__title-wrapper {
+        display: inline-block;
+    }
+
+    .signos-alergia__list {
+        text-align: left;
+    }
+
+    .signos-alergia__image-col {
+        order: -1;
+        /* Image on top on mobile? Or kept bottom. Reference has image right, so bottom usually. */
+        margin-bottom: 2rem;
+    }
+}
