@@ -1,12 +1,33 @@
-*{ box-sizing: border-box; }
-html, body, #root{ height:100%; }
-body{
-  margin:0;
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
   font-family: var(--font-sans);
   color: var(--color-text);
-  background:#fff;
+  background: #fff;
 }
-.container{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b,
+.font-bold {
+  font-family: var(--font-serif);
+}
+
+.container {
   width: min(100% - 2rem, var(--container));
   margin-inline: auto;
 }
