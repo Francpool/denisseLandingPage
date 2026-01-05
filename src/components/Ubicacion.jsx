@@ -6,7 +6,7 @@ import bigMap from "../assets/img/mapa2.png";
 
 export default function Ubicacion() {
     return (
-        <section className="ubicacion">
+        <section id="ubicacion" className="ubicacion">
             <div className="container ubicacion__container">
 
                 {/* Left Side: Text & Locations */}

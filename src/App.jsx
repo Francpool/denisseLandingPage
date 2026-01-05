@@ -12,10 +12,13 @@ import SignosAlergia from "./pages/SignosAlergia.jsx";
 import TestHidrogeno from "./pages/TestHidrogeno.jsx";
 import Endoscopia from "./pages/Endoscopia.jsx";
 import PruebasAlergia from "./pages/PruebasAlergia.jsx";
+import Navbar from "./components/Navbar.jsx";
+import FloatingWhatsApp from "./components/FloatingWhatsApp.jsx";
 
 export default function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/nutricion-ninos" element={<NutricionNinos />} />
@@ -30,6 +33,7 @@ export default function App() {
         <Route path="/endoscopia" element={<Endoscopia />} />
         <Route path="/pruebas-alergia" element={<PruebasAlergia />} />
       </Routes>
+      <FloatingWhatsApp />
     </Router>
   );
 }

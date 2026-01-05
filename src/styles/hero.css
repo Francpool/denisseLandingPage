@@ -4,125 +4,241 @@
    ========================= */
 
 /* Familias de texto utilitarias */
-.libre-baskerville-regular { font-family: "Libre Baskerville", serif; font-weight: 400; font-style: normal; }
-.libre-baskerville-bold    { font-family: "Libre Baskerville", serif; font-weight: 700; font-style: normal; }
-.libre-baskerville-regular-italic { font-family: "Libre Baskerville", serif; font-weight: 400; font-style: italic; }
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-.poppins-thin{ font-family: "Poppins", sans-serif; font-weight:100; font-style:normal; }
-.poppins-extralight{ font-family:"Poppins",sans-serif; font-weight:200; font-style:normal; }
-.poppins-light{ font-family:"Poppins",sans-serif; font-weight:300; font-style:normal; }
-.poppins-regular{ font-family:"Poppins",sans-serif; font-weight:400; font-style:normal; }
-.poppins-medium{ font-family:"Poppins",sans-serif; font-weight:500; font-style:normal; }
-.poppins-semibold{ font-family:"Poppins",sans-serif; font-weight:600; font-style:normal; }
-.poppins-bold{ font-family:"Poppins",sans-serif; font-weight:700; font-style:normal; }
-.poppins-extrabold{ font-family:"Poppins",sans-serif; font-weight:800; font-style:normal; }
-.poppins-black{ font-family:"Poppins",sans-serif; font-weight:900; font-style:normal; }
-.poppins-thin-italic{ font-family:"Poppins",sans-serif; font-weight:100; font-style:italic; }
-.poppins-extralight-italic{ font-family:"Poppins",sans-serif; font-weight:200; font-style:italic; }
-.poppins-light-italic{ font-family:"Poppins",sans-serif; font-weight:300; font-style:italic; }
-.poppins-regular-italic{ font-family:"Poppins",sans-serif; font-weight:400; font-style:italic; }
-.poppins-medium-italic{ font-family:"Poppins",sans-serif; font-weight:500; font-style:italic; }
-.poppins-semibold-italic{ font-family:"Poppins",sans-serif; font-weight:600; font-style:italic; }
-.poppins-bold-italic{ font-family:"Poppins",sans-serif; font-weight:700; font-style:italic; }
-.poppins-extrabold-italic{ font-family:"Poppins",sans-serif; font-weight:800; font-style:italic; }
-.poppins-black-italic{ font-family:"Poppins",sans-serif; font-weight:900; font-style:italic; }
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
 
 /* =========================
    HERO
    ========================= */
-.hero{
+.hero {
   position: relative;
   isolation: isolate;
   overflow: clip;
   /* Aire solo arriba; cero abajo para no dejar “salto” */
-  padding-top: clamp(2rem, 6vw, 4rem);
+  padding-top: clamp(8rem, 10vw, 10rem);
+  /* Increased for fixed navbar */
   padding-bottom: 0;
   min-height: 100svh;
   margin-bottom: 0;
 }
 
 /* Fondo bicolor */
-.hero::before{
-  content:"";
-  position:absolute; inset:0;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
     linear-gradient(to bottom,
       var(--color-cream) 0 var(--hero-cut, 64%),
-      var(--color-mint)  var(--hero-cut, 64%) 100%);
-  z-index:-4;
+      var(--color-mint) var(--hero-cut, 64%) 100%);
+  z-index: -4;
 }
 
 /* Aros decorativos */
-.hero::after{
-  content:"";
-  position:absolute; inset:0;
-  z-index:-2;
-  pointer-events:none;
-  background-repeat:no-repeat;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-repeat: no-repeat;
   background-image:
-    radial-gradient(circle, transparent 62%, rgba(var(--mint-rgb,210,234,231), .28) 63% 74%, transparent 75% 100%),
-    radial-gradient(circle, transparent 62%, rgba(var(--mint-rgb,210,234,231), .28) 63% 74%, transparent 75% 100%);
+    radial-gradient(circle, transparent 62%, rgba(var(--mint-rgb, 210, 234, 231), .28) 63% 74%, transparent 75% 100%),
+    radial-gradient(circle, transparent 62%, rgba(var(--mint-rgb, 210, 234, 231), .28) 63% 74%, transparent 75% 100%);
   background-size: 340px 340px, 380px 380px;
   background-position: -120px -120px, calc(100% + 120px) calc(100% + 120px);
 }
 
 /* Oculta discos antiguos si existen en el DOM */
-.hero__ring, .hero__ring--tl, .hero__ring--br{
-  display:none !important;
-  background:none !important;
+.hero__ring,
+.hero__ring--tl,
+.hero__ring--br {
+  display: none !important;
+  background: none !important;
 }
 
 /* Icono estómago */
-.hero__stomach{
-  position:absolute;
-  right:clamp(28px, 6vw, 70px);
-  top:clamp(90px, 18vh, 155px);
-  width:clamp(110px, 10.5vw, 170px);
-  height:auto;
-  z-index:-1; /* sobre aros, detrás del contenido */
-  opacity:.95;
+.hero__stomach {
+  position: absolute;
+  right: clamp(28px, 6vw, 70px);
+  top: clamp(90px, 18vh, 155px);
+  width: clamp(110px, 10.5vw, 170px);
+  height: auto;
+  z-index: -1;
+  /* sobre aros, detrás del contenido */
+  opacity: .95;
 }
-@media (max-width: 900px){
-  .hero__stomach{
-    right:16px;
-    top:96px;
-    width:clamp(90px, 22vw, 140px);
+
+@media (max-width: 900px) {
+  .hero__stomach {
+    right: 16px;
+    top: 96px;
+    width: clamp(90px, 22vw, 140px);
   }
 }
 
 /* Grid interno */
-.hero__grid{
-  display:grid;
+.hero__grid {
+  display: grid;
   grid-template-columns: 1.05fr .95fr;
-  align-items:end;
-  gap:clamp(1.25rem, 3vw, 2rem);
-  margin-bottom: 0; /* evita empuje inferior */
+  align-items: end;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 0;
+  /* evita empuje inferior */
 }
 
 /* Figura / foto */
-.hero__figure{
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
+.hero__figure {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
-.hero__photo{
-  display:block;
-  height:min(68vh,560px);
-  width:auto; /* no deformar */
-  filter:drop-shadow(0 12px 28px rgba(0,0,0,.18)); /* sombra sin crear hueco real */
+
+.hero__photo {
+  display: block;
+  height: min(68vh, 560px);
+  width: auto;
+  /* no deformar */
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, .18));
+  /* sombra sin crear hueco real */
 }
 
 /* Texto */
-.hero__text{
+.hero__text {
   align-self: end;
   padding-left: clamp(1rem, 3vw, 2rem);
-  padding-bottom: 0; /* evita sumar altura al final */
+  padding-bottom: 0;
+  /* evita sumar altura al final */
   max-width: 32ch;
   display: grid;
   gap: clamp(.6rem, 1.2vw, 1rem);
 }
-.hero__title{
+
+.hero__title {
   color: var(--color-text, #3a3a3a);
   text-transform: uppercase;
   font-weight: 700;
@@ -132,7 +248,8 @@
   max-width: 12ch;
   font-size: clamp(2.4rem, 3.4vw, 3.6rem);
 }
-.hero__subtitle{
+
+.hero__subtitle {
   color: var(--color-text, #3a3a3a);
   opacity: .95;
   font-weight: 500;
@@ -148,31 +265,53 @@
 }
 
 /* Responsive */
-@media (max-width: 900px){
-  .hero__grid{ grid-template-columns:1fr; }
-  .hero__figure{ order:-1; justify-content:flex-end; }
-  .hero__photo{ height:min(44vh,420px); }
-  .hero__text{
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__figure {
+    order: -1;
+    justify-content: flex-end;
+  }
+
+  .hero__photo {
+    height: min(44vh, 420px);
+  }
+
+  .hero__text {
     max-width: 24ch;
     padding-left: 1rem;
     padding-bottom: 1rem;
   }
-  .hero__title{ font-size: clamp(2rem, 7vw, 2.6rem); }
-  .hero__subtitle{ font-size: clamp(.95rem, 3.2vw, 1rem); }
+
+  .hero__title {
+    font-size: clamp(2rem, 7vw, 2.6rem);
+  }
+
+  .hero__subtitle {
+    font-size: clamp(.95rem, 3.2vw, 1rem);
+  }
 }
 
 /* Desktop grande */
-@media (min-width: 1200px){
-  .hero__title{ font-size: 60px; }
-  .hero__subtitle{ font-size: 18px; }
+@media (min-width: 1200px) {
+  .hero__title {
+    font-size: 60px;
+  }
+
+  .hero__subtitle {
+    font-size: 18px;
+  }
 }
 
 /* Posicionado fino del título y subtítulo en desktop */
-:root{
+:root {
   --title-x: 25%;
   --title-y: calc(var(--hero-cut) / 2);
 }
-.hero__title{
+
+.hero__title {
   position: absolute;
   left: var(--title-x);
   top: var(--title-y);
@@ -181,11 +320,13 @@
   max-width: 12ch;
   z-index: 0;
 }
-:root{
+
+:root {
   --subtitle-x: 25%;
   --subtitle-y: calc((var(--hero-cut) + 100%) / 2);
 }
-.hero__subtitle{
+
+.hero__subtitle {
   position: absolute;
   left: var(--subtitle-x);
   top: var(--subtitle-y);
@@ -195,14 +336,16 @@
   text-align: center;
   z-index: 0;
 }
-@media (max-width: 900px){
-  .hero__title{
+
+@media (max-width: 900px) {
+  .hero__title {
     position: static;
     transform: none;
     margin: 0 0 .75rem;
     max-width: 14ch;
   }
-  .hero__subtitle{
+
+  .hero__subtitle {
     position: static;
     transform: none;
     max-width: 28ch;
