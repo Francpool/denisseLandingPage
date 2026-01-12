@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/estudios.css";
 import img1 from "../assets/img/er1.png";
 import img2 from "../assets/img/er2.png";
@@ -24,31 +25,31 @@ export default function Estudios() {
                     {/* Test de Hidrógeno - Linkable */}
                     <div className="estudios__card estudios__card--1">
                         <div className="estudios__label poppins-medium">Test de Hidrógeno</div>
-                        <a href="/test-hidrogeno" className="estudios__figure-link">
+                        <Link to="/test-hidrogeno" className="estudios__figure-link">
                             <div className="estudios__figure">
                                 <img src={img1} alt="Test de Hidrógeno" />
                             </div>
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Endoscopia - Linkable */}
                     <div className="estudios__card estudios__card--2">
                         <div className="estudios__label poppins-medium">Endoscopia- Colonoscopia</div>
-                        <a href="/endoscopia" className="estudios__figure-link">
+                        <Link to="/endoscopia" className="estudios__figure-link">
                             <div className="estudios__figure">
                                 <img src={img2} alt="Endoscopia- Colonoscopia" />
                             </div>
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Pruebas de alergia - Linkable */}
                     <div className="estudios__card estudios__card--3">
                         <div className="estudios__label poppins-medium">Pruebas de alergia</div>
-                        <a href="/pruebas-alergia" className="estudios__figure-link">
+                        <Link to="/pruebas-alergia" className="estudios__figure-link">
                             <div className="estudios__figure">
                                 <img src={img3} alt="Pruebas de alergia" />
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
